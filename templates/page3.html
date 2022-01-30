@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>我的履歷  |  智慧健康預測系統</title>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='icon.ico') }}">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/1/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/static/1/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="/static/1/assets/css/templatemo-edu-meeting.css">
+    <link rel="stylesheet" href="/static/1/assets/css/owl.css">
+    <link rel="stylesheet" href="/static/1/assets/css/lightbox.css">
+
+  </head>
+ 
+<body>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container ">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a class="logo">
+                        <b>我的履歷</b>
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                          <li><a href="/chart0"><b>總覽</b></a></li>
+                          <li>   </li>
+                          <li><a href="chart1"><b>健康行為預測</b></a></li>
+                          <li>   </li>
+                          <li><a href="chart3" class="active"><b>關於我</b></a></li>
+
+                      </ul>        
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+<img src="/static/resume.png">
+
+  <script src="/static/1/assets/js/isotope.min.js"></script>
+  <script src="/static/1/assets/js/owl-carousel.js"></script>
+  <script src="/static/1/assets/js/custom.js"></script>
+
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+          var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+          if (isAnimate) {
+            $('body, html').animate({
+              scrollTop: reqSectionPos },
+            800);
+          } else {
+            $('body, html').scrollTop(reqSectionPos);
+          }
+
+        };
+
+        var checkSection = function checkSection() {
+          $('.section').each(function () {
+            var
+            $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+              currentId = $this.data('section'),
+              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+              reqLink.closest('li').addClass('active').
+              siblings().removeClass('active');
+            }
+          });
+        };
+
+        $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+          e.preventDefault();
+          showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+          checkSection();
+        });
+    </script>
+</body>
+
+</html>

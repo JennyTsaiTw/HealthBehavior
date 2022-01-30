@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>輸出結果  |  智慧健康預測系統</title>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='icon.ico') }}">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/1/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/static/1/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="/static/1/assets/css/templatemo-edu-meeting.css">
+    <link rel="stylesheet" href="/static/1/assets/css/owl.css">
+    <link rel="stylesheet" href="/static/1/assets/css/lightbox.css">
+
+  </head>
+
+
+  
+  
+<body>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container ">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a class="logo">
+                        <b>輸出結果</b>
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                          <li><a href="/chart0"><b>總覽</b></a></li>
+                          <li>   </li>
+                          <li><a href="chart1" class="active"><b>健康行為預測</b></a></li>
+                          <li>   </li>
+                          <li><a href="chart3"><b>關於我</b></a></li>
+
+                      </ul>        
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <section class="heading-page header-text " id="top">
+  <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6>&nbsp;</h6>
+          <h2>&nbsp;</h2>
+        </div>
+      </div>
+  </div>
+  </section>
+
+
+  <section class="meetings-page" id="meetings">
+    <style>
+      #chartdiv-Y1 {
+        width: 100%;
+        height: 500px;
+      }
+      #chartdiv-body {
+        width: 100%;
+        height: 500px;
+      }
+      #chartdiv-gauge {
+        width: 100%;
+        height: 500px;
+      }
+    </style>
+<script src="//www.amcharts.com/lib/4/core.js"></script>
+<script src="//www.amcharts.com/lib/4/charts.js"></script>
+<script src="//www.amcharts.com/lib/4/themes/animated.js"></script>
+
+
+  <div class="container" style="margin-top:30px;">
+    <!-- 圖片呈現位置 -->
+          <h2><b>一、&nbsp;高血壓與高血脂之疾病預測</b></h2>
+          <div id="chartdiv-Y1"></div></br></br><hr class="style-two" /></br>
+          <h2><b>二、&nbsp;是否願意配合醫師指示持續追蹤治療疾病行為</b></h2>
+          <div id="chartdiv-body"></div></br></br><hr class="style-two" /></br>
+          <h2><b>三、&nbsp;願意以行動維持健康程度</b></h2>
+          <div id="chartdiv-gauge"></div></br></br>     
+  </div>
+
+  
+    <div style="text-align:center">
+    <a href="/chart1"><input type ="button" style="
+      background-color: #f05f5c;
+      color: white;
+      font-size:30px;
+      border-radius: 20px;
+      "value="再測一次或換下一位"></input>
+    </a></div></div>
+
+  
+
+<!-- 圖片參數設定 -->
+<script>
+  var AGE="{{args[0]}}";
+  var INC="{{args[1]}}";
+  var DRN="{{args[2]}}";
+  var _PA="{{args[3]}}";
+  var EDU="{{args[4]}}";
+  var Y10=("{{args[5]}}");
+  var PER=("{{args[6]}}");
+  var Y21=("{{args[7]}}");
+  var SMO=("{{args[8]}}");
+  var Y22=("{{args[9]}}");
+</script>
+  
+  <!-- 圖片js設定 -->
+  <!-- Chart code chartdivi-body -->
+  <script src="static/js/bodyY1.js"></script>
+  <!-- Chart code chartdivi-body -->
+  <script src="static/js/body.js"></script>
+  <!-- Chart code chartdiv-gauge -->
+  <script src="static/js/gauge.js"></script>
+
+<div class="footer">
+  <b><p>自強基金會&nbsp;大數據資料分析班  &nbsp;&nbsp;&nbsp;專題發表
+      <br>製作人 :   蔡佳君</p></b>
+</div>
+</section>
+
+  <script src="/static/1/assets/js/isotope.min.js"></script>
+  <script src="/static/1/assets/js/owl-carousel.js"></script>
+  <script src="/static/1/assets/js/custom.js"></script>
+
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+          var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+          if (isAnimate) {
+            $('body, html').animate({
+              scrollTop: reqSectionPos },
+            800);
+          } else {
+            $('body, html').scrollTop(reqSectionPos);
+          }
+
+        };
+
+        var checkSection = function checkSection() {
+          $('.section').each(function () {
+            var
+            $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+              currentId = $this.data('section'),
+              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+              reqLink.closest('li').addClass('active').
+              siblings().removeClass('active');
+            }
+          });
+        };
+
+        $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+          e.preventDefault();
+          showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+          checkSection();
+        });
+    </script>
+</body>
+
+</html>

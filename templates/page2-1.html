@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>輸入介面  |  智慧健康預測系統</title>
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=1.0, user-scalable=0">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='icon.ico') }}">
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/1/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="/static/1/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="/static/1/assets/css/templatemo-edu-meeting.css">
+    <link rel="stylesheet" href="/static/1/assets/css/owl.css">
+    <link rel="stylesheet" href="/static/1/assets/css/lightbox.css">
+
+  </head>
+
+
+  
+  
+<body>
+
+  <!-- ***** Header Area Start ***** -->
+  <header class="header-area header-sticky">
+      <div class="container ">
+          <div class="row">
+              <div class="col-12">
+                  <nav class="main-nav">
+                      <!-- ***** Logo Start ***** -->
+                      <a class="logo">
+                        <b>輸入介面</b>
+                      </a>
+                      <!-- ***** Logo End ***** -->
+                      <!-- ***** Menu Start ***** -->
+                      <ul class="nav">
+                          <li><a href="/chart0"><b>總覽</b></a></li>
+                          <li>   </li>
+                          <li><a href="chart1" class="active"><b>健康行為預測</b></a></li>
+                          <li>   </li>
+                          <li><a href="chart3"><b>關於我</b></a></li>
+
+                      </ul>        
+                      <a class='menu-trigger'>
+                          <span>Menu</span>
+                      </a>
+                      <!-- ***** Menu End ***** -->
+                  </nav>
+              </div>
+          </div>
+      </div>
+  </header>
+  <!-- ***** Header Area End ***** -->
+
+  <section class="heading-page header-text " id="top">
+  <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h6>&nbsp;</h6>
+          <h2>&nbsp;</h2>
+        </div>
+      </div>
+  </div>
+  </section>
+
+
+
+<section class="meetings-page" id="meetings">
+  <div class="container" style="overflow:hidden;letter-spacing:1.5px;line-height:40px;float:relative;">
+    <blockquote><h5><b>請輸入<font color=#CE4B4B>年齡、收入、教育程度、飲酒習慣、運動習慣、有無家庭醫生、菸草使用習慣</font>等數據</b></h5><br></blockquote>
+    <blockquote><h3><b><font color="darkblue">本網頁可依據民眾之健康行為預測：</font></b></h3></blockquote>
+  
+  <div style="padding-top:5px;padding-left: 30px;">
+    <b><h5>預測目標一 :&nbsp;&nbsp;罹患高血壓與高血脂之疾病風險</b></h5>
+    <b><h5>預測目標二 :&nbsp;&nbsp;願意配合醫師指示持續追蹤治療疾病之族群</b></h5>
+    <b><h5>預測目標三 :&nbsp;&nbsp;願意以行動維護健康之族群</b></h5></br>
+  </div>
+ 
+  
+  <form action="/chart2">
+<!-- 下拉式選單 -->
+        <b><div style="text-align: center;float: left;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年紀範圍：<select name="_AGEG5YR">
+          <option value="" selected disabled hidden>請選擇</option>
+          <option value="1">18~24歲</option>
+          <option value="2">25~29歲</option>
+          <option value="3">30~34歲</option>
+          <option value="4">35~39歲</option>
+          <option value="5">40~44歲</option>
+          <option value="6">45~49歲</option>
+          <option value="7">50~54歲</option>
+          <option value="8">55~59歲</option>
+          <option value="9">60~64歲</option>
+          <option value="10">65~69歲</option>
+          <option value="11">70~74歲</option>
+          <option value="12">75~79歲</option>
+          <option value="13">80~以上</option>
+        </select></div>
+
+        <div style="text-align: center;float: left;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年收入：<select name="INCOME2">
+          <option value="" selected disabled hidden>請選擇</option>
+          <option value="1">$15,000以下</option>
+          <option value="2">$15,000~$25,000</option>
+          <option value="3">$25,000~$50,000</option>
+          <option value="4">$50,000(含)以上</option>
+        </select></div>
+
+        <div style="text-align: center;float: left;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;教育程度：<select name="_EDUCAG">
+          <option value="" selected disabled hidden>請選擇</option>
+          <option value="1">高中(未讀或肄業)</option>
+          <option value="2">高中(畢業)</option>
+          <option value="3">大學(肄業或就讀中)</option>
+          <option value="4">大學(畢業)</option>
+        </select></div>
+
+        <div style="text-align: center;float: left;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;飲酒習慣：<select name="_DRNKWK1">
+          <option value="" selected disabled hidden>請選擇</option>
+          <option value="0">無</option>
+          <option value="1">有</option>
+        </select></div>
+
+        <div style="text-align: center;float: left;"> 
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;運動習慣：<select name="_PAREC2">
+          <option value="" selected disabled hidden>請選擇</option>
+          <option value="1">沒達到有氧或 肌力標準</option>
+          <option value="2">達到 肌力標準</option>
+          <option value="3">達到有氧標準</option>
+          <option value="4">達到有氧 & 肌力標準</option>
+        </select></div>
+
+        <div style="text-align: center;float: left;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;有無家庭醫生：<select name="PERSDOC2">
+        <option value="" selected disabled hidden>請選擇</option>
+        <option value="0">沒有</option>
+        <option value="1">1個</option>
+        <option value="2">1個以上</option>
+        </select></div>
+
+        <div style="text-align: center;float: left;">
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;菸草使用習慣：<select name="_SMOKER3">
+        <option value="" selected disabled hidden>請選擇</option>
+            <option value="1">每天</option>
+            <option value="2">有時候</option>
+            <option value="3">曾經</option>
+            <option value="4">從未</option>
+        </select></div></b> 
+
+        </br>
+        <div style="padding-top: 10%;">
+        <div style="text-align:center">
+          <a href="chart2-11.html">
+            <input type="submit" style="
+            background-color: #f05f5c;
+            color: white;
+            font-size:30px;     
+            border-radius: 20px;
+            "value=" 送出 " ></a></br></div> </div>
+  </form>  
+  </div>
+
+  <div class="footer">
+    <b><p>自強基金會&nbsp;大數據資料分析班  &nbsp;&nbsp;&nbsp;專題發表
+        <br>製作人 :   蔡佳君</p></b>
+  </div>
+</section>
+
+
+  <script src="/static/1/assets/js/isotope.min.js"></script>
+  <script src="/static/1/assets/js/owl-carousel.js"></script>
+  <script src="/static/1/assets/js/custom.js"></script>
+
+    <script>
+        //according to loftblog tut
+        $('.nav li:first').addClass('active');
+
+        var showSection = function showSection(section, isAnimate) {
+          var
+          direction = section.replace(/#/, ''),
+          reqSection = $('.section').filter('[data-section="' + direction + '"]'),
+          reqSectionPos = reqSection.offset().top - 0;
+
+          if (isAnimate) {
+            $('body, html').animate({
+              scrollTop: reqSectionPos },
+            800);
+          } else {
+            $('body, html').scrollTop(reqSectionPos);
+          }
+
+        };
+
+        var checkSection = function checkSection() {
+          $('.section').each(function () {
+            var
+            $this = $(this),
+            topEdge = $this.offset().top - 80,
+            bottomEdge = topEdge + $this.height(),
+            wScroll = $(window).scrollTop();
+            if (topEdge < wScroll && bottomEdge > wScroll) {
+              var
+              currentId = $this.data('section'),
+              reqLink = $('a').filter('[href*=\\#' + currentId + ']');
+              reqLink.closest('li').addClass('active').
+              siblings().removeClass('active');
+            }
+          });
+        };
+
+        $('.main-menu, .responsive-menu, .scroll-to-section').on('click', 'a', function (e) {
+          e.preventDefault();
+          showSection($(this).attr('href'), true);
+        });
+
+        $(window).scroll(function () {
+          checkSection();
+        });
+    </script>
+</body>
+
+</html>
